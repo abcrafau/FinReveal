@@ -1,6 +1,6 @@
 # FinReveal
 
-Prosta aplikacja do automatycznej analizy sprawozdań finansowych. Pierwsza wersja obsługuje pliki Excel z arkuszami:
+Prosta aplikacja do automatycznej analizy sprawozdań finansowych. Pierwsza wersja obsługuje pliki XML/XAdES oraz Excel z arkuszami:
 
 - `Bilans`
 - `RZiS`
