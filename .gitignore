@@ -1,0 +1,53 @@
+# Python runtime and cache
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Streamlit and local runtime output
+.streamlit/secrets.toml
+streamlit.*.log
+*.log
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Private financial input/output files
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.tsv
+*.pdf
+data/
+uploads/
+reports/
+exports/
+
+# Build, package, and tooling output
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Keep application assets tracked unless explicitly ignored above.
