@@ -116,14 +116,47 @@ linkedin_icon = image_data_uri(ASSETS_DIR / "linkedin.png")
 
 st.markdown(
     f"""
+    <style>
+        .social-icon {{
+            display: block;
+            width: 32px;
+            height: 32px;
+            background-color: var(--text-color, #000000) !important;
+            color: #000000 !important;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: contain;
+        }}
+
+        .social-icon.linkedin {{
+            mask-image: url("{linkedin_icon}");
+            -webkit-mask-image: url("{linkedin_icon}");
+        }}
+
+        .social-icon.github {{
+            mask-image: url("{github_icon}");
+            -webkit-mask-image: url("{github_icon}");
+        }}
+
+        [data-theme="dark"] .social-icon,
+        [data-baseweb-theme="dark"] .social-icon,
+        .stApp[data-theme="dark"] .social-icon,
+        html[data-theme="dark"] .social-icon,
+        body[data-theme="dark"] .social-icon {{
+            background-color: #ffffff !important;
+        }}
+    </style>
     <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:0.75rem;">
         <h1 style="margin:0; padding:0;">FinReveal</h1>
         <div style="display:flex; align-items:center; gap:0.85rem;">
             <a href="https://www.linkedin.com/in/rafal-koplinski/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <img src="{linkedin_icon}" alt="LinkedIn" style="width:32px; height:32px; object-fit:contain;" />
+                <span class="social-icon linkedin" role="img" aria-label="LinkedIn"></span>
             </a>
             <a href="https://github.com/abcrafau" target="_blank" rel="noopener noreferrer" title="GitHub">
-                <img src="{github_icon}" alt="GitHub" style="width:32px; height:32px; object-fit:contain;" />
+                <span class="social-icon github" role="img" aria-label="GitHub"></span>
             </a>
         </div>
     </div>
