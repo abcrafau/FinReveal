@@ -36,5 +36,4 @@ http://127.0.0.1:8510
 - ekstrakcja najważniejszych pozycji bilansu, rachunku zysków i strat oraz rachunku przepływów pieniężnych,
 - obliczenie pełnego zestawu wskaźników z projektu: rentowności, płynności, zadłużenia i sprawności działania,
 - obsługa plików z wieloma okresami oraz wybór roku analizy przez użytkownika,
-- wygenerowanie prostego komentarza analitycznego,
 - prezentacja trendów pozycji finansowych i wskaźników na wykresach z możliwością wyboru zakresu.
