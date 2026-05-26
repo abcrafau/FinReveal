@@ -1,39 +1,74 @@
 # FinReveal
 
-Prosta aplikacja do automatycznej analizy sprawozdań finansowych. Pierwsza wersja obsługuje pliki XML/XAdES oraz Excel z arkuszami:
+FinReveal to aplikacja webowa w Streamlit do automatycznej analizy sprawozdań finansowych. Umożliwia wczytanie plików Excel, XML albo XAdES, rozpoznaje kluczowe pozycje finansowe, liczy wskaźniki i prezentuje wyniki w formie tabel oraz wykresów trendów.
+
+## Demo
+
+Publiczna wersja aplikacji jest dostępna tutaj:
+
+[https://finreveal.streamlit.app/](https://finreveal.streamlit.app/)
+
+## Najważniejsze funkcje
+
+- obsługa sprawozdań finansowych w formatach `xlsx`, `xml` i `xades`,
+- możliwość wgrania jednego albo kilku plików tej samej spółki,
+- łączenie okresów z kilku sprawozdań w jedną analizę,
+- zabezpieczenie przed zdublowaniem dwóch plików dotyczących tego samego roku sprawozdania,
+- wybór roku analizy po wczytaniu danych,
+- szybkie podsumowanie najważniejszych wartości: przychodów, zysku netto, aktywów razem i kapitału własnego,
+- obliczanie wskaźników rentowności, płynności, zadłużenia i sprawności działania,
+- prezentacja wzorów użytych do obliczenia wskaźników,
+- wykresy trendów dla pozycji finansowych i wskaźników,
+- podgląd danych rozpoznanych przez aplikację.
+
+## Obsługiwane dane
+
+Dla plików Excel aplikacja oczekuje arkuszy:
 
 - `Bilans`
 - `RZiS`
 - `RPP`
 
-Aplikacja wczytuje pozycje sprawozdania, liczy podstawowe wskaźniki finansowe i generuje krótki komentarz analityczny.
+Dla plików XML/XAdES aplikacja odczytuje dane ze struktury sprawozdania finansowego i pobiera wartości dla bieżącego oraz poprzedniego okresu.
 
-## Uruchomienie
+## Uruchomienie lokalne
+
+Zainstaluj zależności:
 
 ```powershell
 pip install -r requirements.txt
+```
+
+Uruchom aplikację:
+
+```powershell
 streamlit run app.py
 ```
 
-W tym projekcie możesz też uruchomić aplikację przez plik:
+W tym projekcie możesz też użyć pliku:
 
 ```powershell
 .\start_app.bat
 ```
 
-Adres aplikacji:
+Domyślny lokalny adres aplikacji:
 
 ```text
 http://127.0.0.1:8510
 ```
 
-## Zakres wersji MVP
+## Technologie
 
-- wczytanie sprawozdania finansowego z Excela albo XML/XAdES,
-- możliwość wgrania kilku plików XML/XAdES tej samej spółki i połączenia okresów w jedną analizę,
-- scalanie kolejnych sprawozdań z nakładającym się okresem; dla powielonego roku aplikacja wybiera dane z raportu o wyższym roku,
-- blokada wczytywania dwóch plików dotyczących tego samego roku sprawozdania, aby nie zdublować danych,
-- ekstrakcja najważniejszych pozycji bilansu, rachunku zysków i strat oraz rachunku przepływów pieniężnych,
-- obliczenie pełnego zestawu wskaźników z projektu: rentowności, płynności, zadłużenia i sprawności działania,
-- obsługa plików z wieloma okresami oraz wybór roku analizy przez użytkownika,
-- prezentacja trendów pozycji finansowych i wskaźników na wykresach z możliwością wyboru zakresu.
+- Python
+- Streamlit
+- pandas
+- Plotly
+- openpyxl
+- Pillow
+
+## Autor
+
+Rafał Kopliński
+
+- LinkedIn: [linkedin.com/in/rafal-koplinski](https://www.linkedin.com/in/rafal-koplinski/)
+- GitHub: [github.com/abcrafau](https://github.com/abcrafau)
