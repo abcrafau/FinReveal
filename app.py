@@ -113,6 +113,7 @@ st.set_page_config(
 
 github_icon = image_data_uri(ASSETS_DIR / "github.png")
 linkedin_icon = image_data_uri(ASSETS_DIR / "linkedin.png")
+finreveal_logo = image_data_uri(ASSETS_DIR / "finreveal_logo_mask.png")
 
 st.markdown(
     f"""
@@ -121,8 +122,8 @@ st.markdown(
             display: block;
             width: 32px;
             height: 32px;
-            background-color: var(--text-color, #000000) !important;
-            color: #000000 !important;
+            color: inherit !important;
+            background-color: currentColor !important;
             mask-position: center;
             mask-repeat: no-repeat;
             mask-size: contain;
@@ -141,16 +142,50 @@ st.markdown(
             -webkit-mask-image: url("{github_icon}");
         }}
 
-        [data-theme="dark"] .social-icon,
-        [data-baseweb-theme="dark"] .social-icon,
-        .stApp[data-theme="dark"] .social-icon,
-        html[data-theme="dark"] .social-icon,
-        body[data-theme="dark"] .social-icon {{
-            background-color: #ffffff !important;
+        .app-header {{
+            color: inherit;
+        }}
+
+        .app-header a,
+        .app-header a:visited,
+        .app-header a:hover,
+        .app-header a:active {{
+            color: inherit !important;
+            text-decoration: none;
+        }}
+
+        .brand-lockup {{
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 0;
+        }}
+
+        .brand-logo {{
+            display: block;
+            width: 120px;
+            height: 46px;
+            color: inherit !important;
+            background-color: currentColor !important;
+            mask-image: url("{finreveal_logo}");
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            -webkit-mask-image: url("{finreveal_logo}");
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: contain;
+        }}
+
+        .brand-lockup h1 {{
+            color: inherit;
         }}
     </style>
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:0.75rem;">
-        <h1 style="margin:0; padding:0;">FinReveal</h1>
+    <div class="app-header" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:0.75rem;">
+        <div class="brand-lockup">
+            <h1 style="margin:0; padding:0;">FinReveal</h1>
+            <span class="brand-logo" role="img" aria-label="FinReveal logo"></span>
+        </div>
         <div style="display:flex; align-items:center; gap:0.85rem;">
             <a href="https://www.linkedin.com/in/rafal-koplinski/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <span class="social-icon linkedin" role="img" aria-label="LinkedIn"></span>
