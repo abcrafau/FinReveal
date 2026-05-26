@@ -26,11 +26,19 @@ def image_data_uri(path: Path) -> str:
 def render_footer() -> None:
     st.markdown(
         """
-        <div style="margin-top:3rem; padding-top:1.25rem; border-top:1px solid rgba(49,51,63,0.18); color:#5f6368; font-size:0.92rem; line-height:1.6;">
-            <strong>FinReveal</strong> — narzędzie do analizy sprawozdań finansowych<br>
-            Autor: Rafał Kopliński<br>
-            Analiza finansowa • Python • Przetwarzanie danych<br>
-            © 2026
+        <div style="margin-top:3rem; padding-top:1.25rem; border-top:1px solid rgba(49,51,63,0.18); color:#5f6368; font-size:0.92rem; line-height:1.6; display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;">
+            <div>
+                <strong>FinReveal</strong> — narzędzie do analizy sprawozdań finansowych<br>
+                Autor: Rafał Kopliński<br>
+                Analiza finansowa • Python • Przetwarzanie danych<br>
+                © 2026
+            </div>
+            <div style="text-align:right; max-width:320px;">
+                Masz uwagi dotyczące aplikacji?<br>
+                <a href="https://forms.gle/cxUfcSjjggh8k4jC6" target="_blank" rel="noopener noreferrer" style="color:inherit; font-weight:600;">
+                    Podziel się opinią!
+                </a>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
