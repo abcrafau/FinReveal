@@ -1,0 +1,53 @@
+**WSKAŹNIKI RENTOWNOŚCI**
+ROS = Zysk (strata) netto/Przychody netto ze sprzedaży
+
+Wskaźnik rentowności sprzedaży brutto = Zysk (strata) brutto/(Przychody netto ze sprzedaży+Pozostałe przychody operacyjne+Przychody finansowe)
+
+Wskaźnik rentowności sprzedaży netto = Zysk (strata) netto/(Przychody netto ze sprzedaży+Pozostałe przychody operacyjne+Przychody finansowe)
+
+ROA = Zysk (strata) netto/Aktywa razem
+
+ROE = Zysk (strata) netto/Kapitał (fundusz) własny
+
+Wskaźnik rentowności kapitału podstawowego = Zysk (strata) netto/Kapitał (fundusz) podstawowy
+
+
+**WSKAŹNIKI PŁYNNOŚCI**
+I poziom płynności (Wskaźnik płynności gotówkowej) = Środki pieniężne i inne aktywa pieniężne/Zobowiązania krótkoterminowe
+
+II poziom płynności (Wskaźnik szybkiej płynności finansowej) = (Aktywa obrotowe-Zapasy-Krótkoterminowe rozliczenia międzyokresowe)/Zobowiązania krótkoterminowe
+
+III poziom płynności (Wskaźnik bieżącej płynności finansowej) = Aktywa obrotowe/Zobowiązania krótkoterminowe
+
+Kapitał obrotowy netto = Aktywa obrotowe-Zobowiązania krótkoterminowe
+
+Wskaźnik ogólnej wystarczalności gotówki = Przepływy pieniężne netto z działalności operacyjnej/(Nabycie wartości niematerialnych i prawnych oraz rzeczowych aktywów trwałych+Dywidendy i inne wypłaty na rzecz właścicieli+Odsetki)
+
+Wskaźnik wydajności gotówkowej majątku = Przepływy pieniężne netto z działalności operacyjnej/Aktywa razem
+
+
+**WSKAŹNIKI ZADŁUŻENIA**
+Wskaźnik ogólnego zadłużenia = Zobowiązania i rezerwy na zobowiązania/Aktywa razem
+
+Wskaźnik pokrycia majątku kapitałem własnym = Kapitał (fundusz) własny/Aktywa razem
+
+Wskaźnik struktury zobowiązań = Zobowiązania długoterminowe/Zobowiązania i rezerwy na zobowiązania
+
+
+**WSKAŹNIKI SPRAWNOŚCI DZIAŁANIA**
+Wskaźnik obrotowości majątku = (Przychody netto ze sprzedaży+Pozostałe przychody operacyjne+Przychody finansowe)/Aktywa razem
+
+Wskaźnik obrotowości majątku trwałego = (Przychody netto ze sprzedaży+Pozostałe przychody operacyjne+Przychody finansowe)/Aktywa trwałe
+
+Wskaźnik obrotowości majątku obcego = (Przychody netto ze sprzedaży+Pozostałe przychody operacyjne+Przychody finansowe)/Aktywa obrotowe
+
+Wskaźnik rotacji zapasów = Przychody netto ze sprzedaży/Zapasy
+
+Wskaźnik cyklu obrotowości zapasów w dniach = Zapasy*365/Przychody netto ze sprzedaży
+
+Wskaźnik cyklu inkasa należności w dniach = Należności krótkoterminowe*365/Przychody netto ze sprzedaży
+
+Wskaźnik okresu spłaty zobowiązań w dniach = Zobowiązania krótkoterminowe*365/Przychody netto ze sprzedaży
+
+Cykl środków pieniężnych = Wskaźnik cyklu obrotowości zapasów w dniach+Wskaźnik cyklu inkasa należności w dniach-Wskaźnik okresu spłaty zobowiązań w dniach
+

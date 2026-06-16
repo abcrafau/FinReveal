@@ -210,9 +210,62 @@ def calculate_ratios(statement: FinancialStatement, year: int | None = None) -> 
         ),
     ]
 
+    required_fields = [
+        ("net_profit", "revenue"),
+        ("profit_before_tax", "revenue", "other_operating_revenue", "financial_revenue"),
+        ("net_profit", "revenue", "other_operating_revenue", "financial_revenue"),
+        ("net_profit", "total_assets"),
+        ("net_profit", "equity"),
+        ("net_profit", "share_capital"),
+        ("cash", "short_term_liabilities"),
+        ("current_assets", "inventories", "short_term_prepayments", "short_term_liabilities"),
+        ("current_assets", "short_term_liabilities"),
+        ("current_assets", "short_term_liabilities"),
+        ("operating_cash_flow", "capex", "dividends_paid", "interest_paid"),
+        ("operating_cash_flow", "total_assets"),
+        ("liabilities_and_provisions", "total_assets"),
+        ("equity", "total_assets"),
+        ("long_term_liabilities", "liabilities_and_provisions"),
+        ("revenue", "other_operating_revenue", "financial_revenue", "total_assets"),
+        ("revenue", "other_operating_revenue", "financial_revenue", "fixed_assets"),
+        ("revenue", "other_operating_revenue", "financial_revenue", "current_assets"),
+        ("revenue", "inventories"),
+        ("inventories", "revenue"),
+        ("short_term_receivables", "revenue"),
+        ("short_term_liabilities", "revenue"),
+        ("inventories", "short_term_receivables", "short_term_liabilities", "revenue"),
+    ]
+    denominators = [
+        revenue,
+        total_income,
+        total_income,
+        total_assets,
+        equity,
+        share_capital,
+        short_term_liabilities,
+        short_term_liabilities,
+        short_term_liabilities,
+        None,
+        capex + dividends_paid + interest_paid,
+        total_assets,
+        total_assets,
+        total_assets,
+        liabilities,
+        total_assets,
+        fixed_assets,
+        current_assets,
+        inventories,
+        revenue,
+        revenue,
+        revenue,
+        revenue,
+    ]
+
     return [
         RatioResult(category=category, label=label, value=value, format=fmt, formula=formula)
-        for category, label, value, fmt, formula in definitions
+        for (category, label, value, fmt, formula), fields, denominator in zip(definitions, required_fields, denominators)
+        if _has_year_values(statement, fields, year)
+        and (denominator is None or denominator != 0)
     ]
 
 
@@ -228,3 +281,7 @@ def format_ratio_value(value: float, fmt: str) -> str:
 
 def _safe_divide(numerator: float, denominator: float) -> float:
     return numerator / denominator if denominator else 0.0
+
+
+def _has_year_values(statement: FinancialStatement, fields: tuple[str, ...], year: int) -> bool:
+    return all(year in statement.values.get(field, {}) for field in fields)

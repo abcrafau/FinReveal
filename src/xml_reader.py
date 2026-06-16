@@ -7,45 +7,49 @@ from src.excel_reader import FinancialStatement
 
 
 XML_FIELD_PATHS = {
-    "total_assets": "Bilans/Aktywa",
-    "fixed_assets": "Bilans/Aktywa/Aktywa_A",
-    "current_assets": "Bilans/Aktywa/Aktywa_B",
-    "inventories": "Bilans/Aktywa/Aktywa_B/Aktywa_B_I",
-    "short_term_receivables": "Bilans/Aktywa/Aktywa_B/Aktywa_B_II",
-    "cash": "Bilans/Aktywa/Aktywa_B/Aktywa_B_III/Aktywa_B_III_1/Aktywa_B_III_1_C",
-    "short_term_prepayments": "Bilans/Aktywa/Aktywa_B/Aktywa_B_IV",
-    "equity": "Bilans/Pasywa/Pasywa_A",
-    "share_capital": "Bilans/Pasywa/Pasywa_A/Pasywa_A_I",
-    "liabilities_and_provisions": "Bilans/Pasywa/Pasywa_B",
-    "long_term_liabilities": "Bilans/Pasywa/Pasywa_B/Pasywa_B_II",
-    "short_term_liabilities": "Bilans/Pasywa/Pasywa_B/Pasywa_B_III",
-    "revenue": "RZiS/RZiSPor/A",
-    "gross_profit": "RZiS/RZiSPor/C",
-    "sales_profit": "RZiS/RZiSPor/C",
-    "other_operating_revenue": "RZiS/RZiSPor/D",
-    "operating_profit": "RZiS/RZiSPor/F",
-    "financial_revenue": "RZiS/RZiSPor/G",
-    "profit_before_tax": "RZiS/RZiSPor/I",
-    "income_tax": "RZiS/RZiSPor/J",
-    "net_profit": "RZiS/RZiSPor/L",
-    "operating_cash_flow": "RachPrzeplywow/PrzeplywyPosr/A/A_III",
-    "capex": "RachPrzeplywow/PrzeplywyPosr/B/B_II/B_II_1",
-    "investing_cash_flow": "RachPrzeplywow/PrzeplywyPosr/B/B_III",
-    "dividends_paid": "RachPrzeplywow/PrzeplywyPosr/C/C_II/C_II_2",
-    "interest_paid": "RachPrzeplywow/PrzeplywyPosr/C/C_II/C_II_8",
-    "financing_cash_flow": "RachPrzeplywow/PrzeplywyPosr/C/C_III",
-    "cash_flow_total": "RachPrzeplywow/PrzeplywyPosr/D",
-    "cash_end": "RachPrzeplywow/PrzeplywyPosr/G",
+    "total_assets": ("Bilans/Aktywa", "BilansJednostkaMikro/Aktywa"),
+    "fixed_assets": ("Bilans/Aktywa/Aktywa_A", "BilansJednostkaMikro/Aktywa/Aktywa_A"),
+    "current_assets": ("Bilans/Aktywa/Aktywa_B", "BilansJednostkaMikro/Aktywa/Aktywa_B"),
+    "inventories": ("Bilans/Aktywa/Aktywa_B/Aktywa_B_I", "BilansJednostkaMikro/Aktywa/Aktywa_B/Aktywa_B_1"),
+    "short_term_receivables": (
+        "Bilans/Aktywa/Aktywa_B/Aktywa_B_II",
+        "BilansJednostkaMikro/Aktywa/Aktywa_B/Aktywa_B_2",
+    ),
+    "cash": ("Bilans/Aktywa/Aktywa_B/Aktywa_B_III/Aktywa_B_III_1/Aktywa_B_III_1_C",),
+    "short_term_prepayments": ("Bilans/Aktywa/Aktywa_B/Aktywa_B_IV",),
+    "equity": ("Bilans/Pasywa/Pasywa_A", "BilansJednostkaMikro/Pasywa/Pasywa_A"),
+    "share_capital": ("Bilans/Pasywa/Pasywa_A/Pasywa_A_I", "BilansJednostkaMikro/Pasywa/Pasywa_A/Pasywa_A_1"),
+    "liabilities_and_provisions": ("Bilans/Pasywa/Pasywa_B", "BilansJednostkaMikro/Pasywa/Pasywa_B"),
+    "long_term_liabilities": ("Bilans/Pasywa/Pasywa_B/Pasywa_B_II",),
+    "short_term_liabilities": ("Bilans/Pasywa/Pasywa_B/Pasywa_B_III",),
+    "revenue": ("RZiS/RZiSPor/A", "RZiSJednostkaMikro/A"),
+    "gross_profit": ("RZiS/RZiSPor/C",),
+    "sales_profit": ("RZiS/RZiSPor/C",),
+    "other_operating_revenue": ("RZiS/RZiSPor/D", "RZiSJednostkaMikro/C"),
+    "operating_profit": ("RZiS/RZiSPor/F",),
+    "financial_revenue": ("RZiS/RZiSPor/G",),
+    "profit_before_tax": ("RZiS/RZiSPor/I",),
+    "income_tax": ("RZiS/RZiSPor/J",),
+    "net_profit": ("RZiS/RZiSPor/L", "RZiSJednostkaMikro/F"),
+    "operating_cash_flow": ("RachPrzeplywow/PrzeplywyPosr/A/A_III",),
+    "capex": ("RachPrzeplywow/PrzeplywyPosr/B/B_II/B_II_1",),
+    "investing_cash_flow": ("RachPrzeplywow/PrzeplywyPosr/B/B_III",),
+    "dividends_paid": ("RachPrzeplywow/PrzeplywyPosr/C/C_II/C_II_2",),
+    "interest_paid": ("RachPrzeplywow/PrzeplywyPosr/C/C_II/C_II_8",),
+    "financing_cash_flow": ("RachPrzeplywow/PrzeplywyPosr/C/C_III",),
+    "cash_flow_total": ("RachPrzeplywow/PrzeplywyPosr/D",),
+    "cash_end": ("RachPrzeplywow/PrzeplywyPosr/G",),
 }
 
 
 def read_xml_financial_statement(file: str | BinaryIO) -> FinancialStatement:
     root = _read_xml_root(file)
     years = _detect_years(root)
-    values = {
-        field: _extract_year_values(root, path, years)
-        for field, path in XML_FIELD_PATHS.items()
-    }
+    values = {}
+    for field, paths in XML_FIELD_PATHS.items():
+        yearly_values = _extract_year_values(root, paths, years)
+        if yearly_values:
+            values[field] = yearly_values
     return FinancialStatement(years=years, values=values)
 
 
@@ -68,10 +72,14 @@ def _detect_years(root: ET.Element) -> list[int]:
     return [current_year, current_year - 1]
 
 
-def _extract_year_values(root: ET.Element, path: str, years: list[int]) -> dict[int, float]:
-    node = _find_by_local_path(root, path)
+def _extract_year_values(root: ET.Element, paths: tuple[str, ...], years: list[int]) -> dict[int, float]:
+    node = None
+    for path in paths:
+        node = _find_by_local_path(root, path)
+        if node is not None:
+            break
     if node is None:
-        raise ValueError(f"Nie znaleziono ścieżki XML: {path}")
+        return {}
 
     values = {}
     kwota_names = ("KwotaA", "KwotaB")

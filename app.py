@@ -285,6 +285,11 @@ ratio_df = pd.DataFrame(
 )
 
 st.subheader("Wskaźniki finansowe")
+if ratio_df.empty:
+    st.info("Brak kompletu danych do obliczenia wskaznikow dla wybranego roku.")
+    render_footer()
+    st.stop()
+
 categories = list(dict.fromkeys(ratio_df["Kategoria"].tolist()))
 tabs = st.tabs(categories)
 
